@@ -34,7 +34,7 @@ UniNet accepts CSR formatted network as input. The toolkit `gen` can convert tex
 
 **Example**
 ```shell
-./gen --input data/blogcatalog_edge.txt --output data/blogcatalog.bin
+./gen -input data/blogcatalog_edge.txt -output data/blogcatalog.bin
 ```
 
 
@@ -71,6 +71,14 @@ According to the above command, UniNet executes end-to-end training process and 
 **Model-Specific Options**
 * `-p`, `-q` Parameters for node2vec, edge2vec, and fairwalk for the second-order random walk constrain.
 * `-meta` Specify the metapath used for metapath2vec with a string of integers, `01210` for example. Note that the node type number must be within the limits of the network dataset, and the string must be circular, that is, the beginning and the end must be consistent.
+
+**Embedding Training Options**
+* `-size` The demension of embedding space. The default is 128.
+* `-cbow` Whether to use cbow (If not, uses skip-gram). The default is 0.
+* `-window` Word2vec skip window size. The default is 10.
+* `-sample` Sub-sampling size. The default is 1e-3.
+* `-negative` Negative sampling size for skip-gram. The default is 5.
+* `-iter` Training iteration. The default is 1.
 
 ## Evaluation
 The evaluation is conducted on a server with 24-core Xeon CPU and 96GB of memory. The parallelism is set to 16.

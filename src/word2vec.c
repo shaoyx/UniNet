@@ -77,6 +77,7 @@ void ReadWord(char *word, FILE *fin, char *eof) {
       break;
     }
     if (ch == 13) continue;
+    if (ch > '9' || ch < '0') break;
     if ((ch == ' ') || (ch == '\t') || (ch == '\n')) {
       if (a > 0) {
         if (ch == '\n') ungetc(ch, fin);
@@ -280,10 +281,11 @@ void LearnVocabFromTrainFile() {
     exit(1);
   }
   vocab_size = 0;
-  AddWordToVocab((char *)"</s>");
   while (1) {
     ReadWord(word, fin, &eof);
     if (eof) break;
+    if (word[0] >'9' || word[0] < '0') continue;
+    if (word[0] == '0' && word[1] != 0) continue;
     train_words++;
     wc++;
     if ((debug_mode > 1) && (wc >= 1000000)) {

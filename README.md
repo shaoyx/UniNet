@@ -173,11 +173,11 @@ model = (RWModel *)node2vec;
 
 This project is licensed under the terms of [MIT](https://github.com/shaoyx/UniNet/blob/master/LICENSE) license. If the code is used, please cite as the following.
 ```
-@article{Yao2020UniNetSN,
-  title={UniNet: Scalable Network Representation Learning with Metropolis-Hastings Sampling},
-  author={Xingyu Yao and Yingxia Shao and Bin Cui and Lei Chen},
-  journal={ArXiv},
-  year={2020},
-  volume={abs/2010.04895}
+@inproceedings{Yao2020UniNetSN,
+author = {Xingyu Yao and Yingxia Shao and Bin Cui and Lei Chen},
+title = {UniNet: Scalable Network Representation Learning with Metropolis-Hastings Sampling},
+year = {2021},
+booktitle = {Proceedings of the 37th IEEE International Conference on Data Engineering},
+series = {ICDE '21}
 }
 ```
